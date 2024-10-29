@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>All Acoustic Guitars</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>All Guitars</h2>
+        <div id="filters">
+            <label for="brand">Brand:</label>
+            <select id="brand" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="Yamaha">Yamaha</option>
+                <option value="Fender">Fender</option>
+            </select>
+            <label for="price">Price Range:</label>
+            <select id="price" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="low">Under $300</option>
+                <option value="mid">$300 - $500</option>
+                <option value="high">Above $500</option>
+            </select>
+        </div>
+
+        <div class="product-list">
+            <div class="product" data-brand="Yamaha" data-price="299">
+                <img src="Yamaha FG800.jpg" alt="Yamaha FG800"height="500" width="200">
+                <h3>Yamaha FG800</h3>
+                <p>$299.99</p>
+                <button onclick="addToCart('Yamaha FG800', 299.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="399">
+                <img src="Fender Acoustic.jpg" alt="Fender Acoustic"height="500" width="220">
+                <h3>Fender Acoustic</h3>
+                <p>$399.99</p>
+                <button onclick="addToCart('Fender Acoustic', 399.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="450">
+                <img src="Yamaha LL16.jfif" alt="Yamaha LL16"height="500" width="200">
+                <h3>Yamaha LL16</h3>
+                <p>$450.00</p>
+                <button onclick="addToCart('Yamaha LL16', 450.00)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="600">
+                <img src="Fender CD-60S.jpg" alt="Fender CD-60S"height="500" width="200">
+                <h3>Fender CD-60S</h3>
+                <p>$600.00</p>
+                <button onclick="addToCart('Fender CD-60S', 600.00)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="250">
+                <img src="Yamaha FS800.jfif" alt="Yamaha FS800"height="500" width="200">
+                <h3>Yamaha FS800</h3>
+                <p>$249.99</p>
+                <button onclick="addToCart('Yamaha FS800', 249.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="350">
+                <img src="Fender FA-115.jfif" alt="Fender FA-115"height="500" width="200">
+                <h3>Fender FA-115</h3>
+                <p>$349.99</p>
+                <button onclick="addToCart('Fender FA-115', 349.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="550">
+                <img src="Yamaha A3M.jpg" alt="Yamaha A3M"height="500" width="200">
+                <h3>Yamaha A3M</h3>
+                <p>$549.99</p>
+                <button onclick="addToCart('Yamaha A3M', 549.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="720">
+                <img src="Fender American Professional II.jpg" alt="Fender American Professional II"height="500" width="200">
+                <h3>Fender American Professional II</h3>
+                <p>$719.99</p>
+                <button onclick="addToCart('Fender American Professional II', 719.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="430">
+                <img src="Yamaha LL36.jfif" alt="Yamaha LL36"height="500" width="200">
+                <h3>Yamaha LL36</h3>
+                <p>$429.99</p>
+                <button onclick="addToCart('Yamaha LL36', 429.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="299">
+                <img src="Fender CD-140S.jpg" alt="Fender CD-140S"height="500" width="200">
+                <h3>Fender CD-140S</h3>
+                <p>$299.99</p>
+                <button onclick="addToCart('Fender CD-140S', 299.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="370">
+                <img src="Yamaha FG830.jfif" alt="Yamaha FG830"height="500" width="200">
+                <h3>Yamaha FG830</h3>
+                <p>$369.99</p>
+                <button onclick="addToCart('Yamaha FG830', 369.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="620">
+                <img src="Fender Paramount.jpg" alt="Fender Paramount"height="500" width="200">
+                <h3>Fender Paramount</h3>
+                <p>$619.99</p>
+                <button onclick="addToCart('Fender Paramount', 619.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="480">
+                <img src="Yamaha A1M.jpg" alt="Yamaha A1M"height="500" width="200">
+                <h3>Yamaha A1M</h3>
+                <p>$479.99</p>
+                <button onclick="addToCart('Yamaha A1M', 479.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="500">
+                <img src="Fender Classic Design.jfif" alt="Fender Classic Design"height="500" width="200">
+                <h3>Fender Classic Design</h3>
+                <p>$499.99</p>
+                <button onclick="addToCart('Fender Classic Design', 499.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="350">
+                <img src="Yamaha JR2.jfif" alt="Yamaha JR2"height="500" width="200">
+                <h3>Yamaha JR2</h3>
+                <p>$349.99</p>
+                <button onclick="addToCart('Yamaha JR2', 349.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="700">
+                <img src="Fender Player Series.jfif" alt="Fender Player Series"height="500" width="200">
+                <h3>Fender Player Series</h3>
+                <p>$699.99</p>
+                <button onclick="addToCart('Fender Player Series', 699.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="375">
+                <img src="Yamaha APX600.jpg" alt="Yamaha APX600"height="500" width="200">
+                <h3>Yamaha APX600</h3>
+                <p>$374.99</p>
+                <button onclick="addToCart('Yamaha APX600', 374.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="470">
+                <img src="Fender Newporter.jfif" alt="Fender Newporter"height="500" width="200">
+                <h3>Fender Newporter</h3>
+                <p>$469.99</p>
+                <button onclick="addToCart('Fender Newporter', 469.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Yamaha" data-price="324">
+                <img src="Yamaha F335.jpg" alt="Yamaha F335"height="500" width="200">
+                <h3>Yamaha F335</h3>
+                <p>$324.99</p>
+                <button onclick="addToCart('Yamaha F335', 324.99)">Add to Cart</button>
+            </div>
+            <div class="product" data-brand="Fender" data-price="390">
+                <img src="Fender FA-345.jfif" alt="Fender FA-345"height="500" width="200">
+                <h3>Fender FA-345</h3>
+                <p>$389.99</p>
+                <button onclick="addToCart('Fender FA-345', 389.99)">Add to Cart</button>
+            </div>
+			<div class="product" data-brand="Yamaha" data-price="199">
+                <img src="Yamaha F310.jpg" alt="Yamaha F310"height="500" width="200">
+                <h3>Yamaha F310</h3>
+                <p>$199.99</p>
+                <button onclick="addToCart('Yamaha F310', 199.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
